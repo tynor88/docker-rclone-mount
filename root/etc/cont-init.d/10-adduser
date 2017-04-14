@@ -14,4 +14,4 @@ User gid:    $(id -g abc)
 -------------------------------------
 "
 chown abc:abc \
-	/config \
+	/config
