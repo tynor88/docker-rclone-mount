@@ -12,7 +12,7 @@ if [ -z "$LOCAL_MOUNT" ]; then
   exit 1
 fi
 
-mount_command="rclone mount --allow-other --read-only --buffer-size=1G --max-read-ahead=200M --acd-templink-threshold=0 --dir-cache-time=60m --timeout=30s --contimeout=15s --retries=3 --low-level-retries=1 --stats=0 -v '$REMOTE_MOUNT' '$LOCAL_MOUNT'"
+mount_command="rclone mount --allow-other --read-only --buffer-size=1G --max-read-ahead=200M --acd-templink-threshold=0 --dir-cache-time=60m --timeout=30s --contimeout=15s --retries=3 --low-level-retries=1 --stats=0 -vv '$REMOTE_MOUNT' '$LOCAL_MOUNT'"
 
 echo "Executing => $mount_command"
 exec \
