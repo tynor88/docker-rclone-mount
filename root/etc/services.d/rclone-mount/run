@@ -15,4 +15,5 @@ fi
 mount_command="rclone mount --allow-other --read-only --buffer-size=1G --max-read-ahead=200M --acd-templink-threshold=0 --dir-cache-time=60m --timeout=30s --contimeout=15s --retries=3 --low-level-retries=1 --stats=0 -v '$REMOTE_MOUNT' '$LOCAL_MOUNT'"
 
 echo "Executing => $mount_command"
-eval "$mount_command"
+exec \
+	s6-setuidgid abc $mount_command
