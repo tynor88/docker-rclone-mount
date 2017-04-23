@@ -17,7 +17,7 @@ if [ -z "$RCLONE_MOUNT_OPTIONS" ]; then
   exit 1
 fi
 
-mount_command="rclone mount $RCLONE_MOUNT_OPTIONS '$REMOTE_MOUNT' '$LOCAL_MOUNT'"
+mount_command="rclone mount $RCLONE_MOUNT_OPTIONS $REMOTE_MOUNT $LOCAL_MOUNT"
 
 echo "Executing => $mount_command"
 exec \
