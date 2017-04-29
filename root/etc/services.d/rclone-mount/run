@@ -7,17 +7,7 @@ if [ -z "$REMOTE_MOUNT" ]; then
   exit 1
 fi
 
-if [ -z "$LOCAL_MOUNT" ]; then
-  echo "Error: LOCAL_MOUNT environment variable was not passed to the container."
-  exit 1
-fi
-
-if [ -z "$RCLONE_MOUNT_OPTIONS" ]; then
-  echo "Error: RCLONE_MOUNT_OPTIONS environment variable was not passed to the container."
-  exit 1
-fi
-
-mount_command="rclone mount --config=/config/.rclone.conf $RCLONE_MOUNT_OPTIONS $REMOTE_MOUNT $LOCAL_MOUNT"
+mount_command="rclone mount --config=/config/.rclone.conf $RCLONE_MOUNT_OPTIONS $REMOTE_MOUNT /data"
 
 echo "Executing => $mount_command"
 exec \
