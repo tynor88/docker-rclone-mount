@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv sh
 
 # unmount fuse
-fusermount -u /data
+fusermount -u -z /data
