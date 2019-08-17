@@ -4,5 +4,6 @@
 touch /config/.rclone.conf
 
 # permissions
-chown abc:abc \
-	/config/.rclone.conf
+chown -R abc:abc \
+	/config/.rclone.conf \
+	/root
