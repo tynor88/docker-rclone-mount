@@ -56,7 +56,7 @@ RUN \
 	usermod -G users abc && \
 
 # create some files / folders
-	mkdir -p /config /data && \
+	mkdir -p /config /data /tmpdata && \
 	mkdir -p /root/.cache/rclone/cache-backend
 
 # add local files
