@@ -2,7 +2,7 @@ FROM alpine:latest
 MAINTAINER tynor88 <tynor@hotmail.com>
 
 # global environment settings
-ENV RCLONE_VERSION="current"
+ENV RCLONE_DOWNLOAD_VERSION="current"
 ENV PLATFORM_ARCH="amd64"
 
 # s6 environment settings
@@ -34,8 +34,8 @@ RUN \
 	/tmp/s6-overlay.tar.gz -C / && \
 
  cd tmp && \
- wget -q http://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-${PLATFORM_ARCH}.zip && \
- unzip /tmp/rclone-${RCLONE_VERSION}-linux-${PLATFORM_ARCH}.zip && \
+ wget -q http://downloads.rclone.org/rclone-${RCLONE_DOWNLOAD_VERSION}-linux-${PLATFORM_ARCH}.zip && \
+ unzip /tmp/rclone-${RCLONE_DOWNLOAD_VERSION}-linux-${PLATFORM_ARCH}.zip && \
  mv /tmp/rclone-*-linux-${PLATFORM_ARCH}/rclone /usr/bin && \
 
  apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/community \
